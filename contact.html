@@ -10,6 +10,7 @@
   >
   <link rel="stylesheet" href="styles.css">
 </head>
+<script src="script.js"></script>
 <body class="site-body">
 
   <header class="site-header">
@@ -18,9 +19,11 @@
 
       <nav class="site-nav" aria-label="Main navigation">
         <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="galleries.html">Galleries</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
+  <li><a href="index.html" id="nav-home">Home</a></li>
+  <li><a href="galleries.html" id="nav-galleries">Galleries</a></li>
+  <li><a href="contact.html" id="nav-contact">Contact</a></li>
+  <li><a href="materialize.html" id="nav-materialize">Materialize</a></li>
+</ul>
         </ul>
       </nav>
     </div>
@@ -104,7 +107,7 @@
       <div class="content-card booking-form-card centered-card">
         <h2>Booking Form</h2>
 
-        <form class="booking-form" action="#" method="post">
+        <form class="booking-form" id="booking-form" action="#" method="post">
           <div class="form-row">
             <div class="form-group">
               <label for="full-name">Full Name</label>
