@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materialize 2 | Grego Gallery</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .interaction-page { padding: 64px 0 80px; }
+
+    .interaction-panel {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 42px;
+    }
+
+    .carousel { height: 460px; }
+    .carousel .carousel-item {
+      width: 320px;
+      height: 420px;
+    }
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+    }
+
+    .materialize-button {
+      background: var(--text) !important;
+      color: var(--bg) !important;
+      border-radius: 999px;
+    }
+
+    .collapsible-header {
+      background: var(--surface-2);
+      color: var(--text);
+    }
+
+    .collapsible-body {
+      background: var(--surface);
+    }
+
+    .input-field input {
+      color: var(--text);
+    }
+
+    .input-field label {
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body class="site-body">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="site-logo" href="index.html">Grego Gallery</a>
+
+    <nav class="site-nav">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="galleries.html">Galleries</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="materialize.html">Materialize</a></li>
+        <li><a href="Materialize2.html" class="active">Materialize2</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="interaction-page">
+<div class="container">
+
+  <!-- RADIO SECTION -->
+  <section class="interaction-panel">
+    <h2>Favorite Type of Photoshoot</h2>
+
+    <form>
+      <p>
+        <label>
+          <input name="shoot" type="radio" value="Portrait" onclick="displayShoot()"/>
+          <span>Portrait</span>
+        </label>
+      </p>
+
+      <p>
+        <label>
+          <input name="shoot" type="radio" value="Graduation" onclick="displayShoot()"/>
+          <span>Graduation</span>
+        </label>
+      </p>
+
+      <p>
+        <label>
+          <input name="shoot" type="radio" value="Editorial" onclick="displayShoot()"/>
+          <span>Editorial</span>
+        </label>
+      </p>
+    </form>
+
+    <div id="shoot-response" style="margin-top:12px; color:var(--muted);"></div>
+  </section>
+
+
+  <!-- EMAIL SECTION -->
+  <section class="interaction-panel">
+    <h2>Subscribe for Updates</h2>
+
+    <form onsubmit="submitEmail(event)">
+      <div class="input-field">
+        <input id="email" type="email" required>
+        <label for="email">Email</label>
+      </div>
+
+      <button type="submit" class="btn waves-effect materialize-button">
+        Subscribe
+      </button>
+    </form>
+
+    <div id="email-response" style="margin-top:12px; color:var(--muted);"></div>
+  </section>
+
+
+  <!-- CAROUSEL -->
+  <section class="interaction-panel">
+    <h2>Featured Work</h2>
+
+    <div class="carousel" id="gregoCarousel">
+      <a class="carousel-item"><img src="Images/DSCF0983-grego.gallery12.12.25.jpg"></a>
+      <a class="carousel-item"><img src="Images/DSF3660-grego.gallery.jpg"></a>
+      <a class="carousel-item"><img src="Images/FUJI1716-grego.gallery09.16.25-3.jpg"></a>
+      <a class="carousel-item"><img src="Images/FUJI9517-grego.gallery12.06.25.jpg"></a>
+      <a class="carousel-item"><img src="Images/FUJI5901-grego.gallery10.17.25-2.jpg"></a>
+    </div>
+  </section>
+
+
+  <!-- COLLAPSIBLE -->
+  <section class="interaction-panel">
+    <h2>Session Types</h2>
+
+    <ul class="collapsible" id="gregoCollapsible">
+      <li class="active">
+        <div class="collapsible-header">
+          <i class="material-icons">camera_alt</i>Portrait Sessions
+        </div>
+        <div class="collapsible-body">
+          <p>Clean, expressive portraits built for personal branding and creative work.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">school</i>Graduation Sessions
+        </div>
+        <div class="collapsible-body">
+          <p>Focused on milestone moments with polished campus imagery.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">style</i>Editorial Work
+        </div>
+        <div class="collapsible-body">
+          <p>Concept driven shoots with strong direction and storytelling.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner footer-grid">
+    <div></div>
+
+    <div class="footer-text">
+      <h2 class="footer-title">Thanks for Visiting!</h2>
+      <p>Gregory Engler Jr.</p>
+    </div>
+
+    <div class="footer-cta">
+      <a href="contact.html" class="footer-button">Book a Photoshoot</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const carousel = document.querySelector('#gregoCarousel');
+  M.Carousel.init(carousel, {
+    dist: -90,
+    numVisible: 5
+  });
+
+  const collapsible = document.querySelector('#gregoCollapsible');
+  M.Collapsible.init(collapsible, { accordion: false });
+
+});
+
+// RADIO FUNCTION
+function displayShoot() {
+  const selected = document.querySelector('input[name="shoot"]:checked').value;
+  document.getElementById('shoot-response').innerText =
+    "You selected: " + selected;
+}
+
+// EMAIL FUNCTION
+function submitEmail(event) {
+  event.preventDefault();
+  const email = document.getElementById('email').value;
+
+  document.getElementById('email-response').innerText =
+    "Thank you. Updates will be sent to: " + email;
+
+  document.getElementById('email').value = '';
+}
+</script>
+
+</body>
+</html>
