@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery | Grego Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .jquery-section {
+      padding: 72px 0;
+    }
+
+    .jquery-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .stacked-cards {
+      display: grid;
+      gap: 28px;
+    }
+
+    .jquery-card {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card {
+      height: 100%;
+    }
+
+    .jquery-card h2 {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    .jquery-card p,
+    .jquery-card li {
+      color: var(--muted);
+    }
+
+    .jquery-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 60%;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+
+    #photoBox {
+      margin-top: 18px;
+    }
+
+    #photoList {
+      color: var(--muted);
+      padding-left: 20px;
+    }
+
+    .jquery-input {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      font: inherit;
+      margin-bottom: 14px;
+    }
+
+    .jquery-output {
+      margin-top: 14px;
+      color: var(--muted);
+    }
+
+    .highlight {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .jquery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="site-body">
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a class="site-logo" href="index.html">Grego Gallery</a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="index.html" id="nav-home">Home</a></li>
+        <li><a href="galleries.html" id="nav-galleries">Galleries</a></li>
+        <li><a href="contact.html" id="nav-contact">Contact</a></li>
+        <li><a href="materialize.html" id="nav-materialize">Materialize</a></li>
+        <li><a href="materialize2.html" id="nav-materialize2">Materialize2</a></li>
+        <li><a href="JQuery.html" id="nav-JQuery">JQuery</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container hero-content">
+      <p class="eyebrow">IMS 222</p>
+      <h1 class="page-title">JQuery Demo Page</h1>
+      <p class="hero-intro">
+        This page demonstrates jQuery interactions in line with the styling of my photography website.
+      </p>
+    </div>
+  </section>
+
+  <section class="jquery-section">
+    <div class="container jquery-grid">
+
+      <div class="jquery-card feature-card">
+        <h2>Featured Image Interaction</h2>
+        <p>
+          Use the buttons below to hide, show, slide, or change the featured photography section.
+        </p>
+
+        <div id="photoBox">
+          <img
+            class="jquery-image"
+            src="Images/DSCF0983-grego.gallery12.12.25.jpg"
+            alt="Graduation portrait by Grego Gallery"
+          >
+
+          <p id="photoText">
+            Graduation portraits are always the most surprising sessions.
+          </p>
+        </div>
+
+        <button id="toggleBtn" class="button-primary">Toggle Image</button>
+        <button id="slideBtn" class="button-primary">Slide Image</button>
+        <button id="textBtn" class="button-primary">Change Text</button>
+      </div>
+
+      <div class="stacked-cards">
+
+        <div class="jquery-card">
+          <h2>Session Interest Form</h2>
+          <p>
+            Type your name and choose what kind of session you are interested in.
+          </p>
+
+          <input class="jquery-input" type="text" id="nameInput" placeholder="Enter your name">
+
+          <select class="jquery-input" id="sessionInput">
+            <option value="Portrait Session">Portrait Session</option>
+            <option value="Graduation Session">Graduation Session</option>
+            <option value="Editorial Shoot">Editorial Shoot</option>
+            <option value="Headshot Session">Headshot Session</option>
+          </select>
+
+          <button id="submitBtn" class="button-primary">Submit</button>
+
+          <p id="output" class="jquery-output"></p>
+        </div>
+
+        <div class="jquery-card">
+          <h2>Build a Shot List</h2>
+          <p>
+            Click the button to add suggested photoshoot ideas to a list.
+          </p>
+
+          <ul id="photoList"></ul>
+
+          <button id="addItem" class="button-primary">Add Shot Idea</button>
+        </div>
+
+        <div class="jquery-card">
+          <h2>JQuery for Styling</h2>
+          <p>
+            JQuery automatically styles the section headings on this page with a highlight class.
+          </p>
+          <p>
+            This demonstrates how we can set styling conditions that stay functional even when we add new content.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner footer-grid">
+
+    <div class="footer-spacer"></div>
+
+    <div class="footer-text">
+      <h2 class="footer-title">Thanks for Visiting!</h2>
+
+      <p class="footer-name">Gregory Engler Jr.</p>
+
+      <p class="footer-contact">
+        <a href="mailto:GregEnglerJr@gmail.com">GregEnglerJr@gmail.com</a>
+      </p>
+
+      <p class="footer-site">
+        <a href="https://www.gregogallery.com" target="_blank" rel="noopener noreferrer">
+          GregoGallery.com
+        </a>
+      </p>
+
+      <p class="footer-location">Cincinnati, Ohio</p>
+
+      <p class="footer-copyright">© 2026 Gregory Engler Photography</p>
+    </div>
+
+    <div class="footer-cta">
+      <a href="contact.html" class="footer-button">Book a Photoshoot</a>
+    </div>
+
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+  $(document).ready(function() {
+
+    $("h2").addClass("highlight");
+
+    $("#toggleBtn").click(function() {
+      $("#photoBox").toggle();
+    });
+
+    $("#slideBtn").click(function() {
+      $("#photoBox").slideToggle();
+    });
+
+    let textChanged = false;
+
+    $("#textBtn").click(function() {
+      if (!textChanged) {
+        $("#photoText").text("This text was changed using jQuery. Click again to change it back.");
+        textChanged = true;
+      } else {
+        $("#photoText").text("Graduation portraits are always the most surprising sessions.");
+        textChanged = false;
+      }
+    });
+
+    let shotCounter = 0;
+
+    const shotIdeas = [
+      "Close-up portrait",
+      "Full-body editorial pose",
+      "Campus landmark photo",
+      "Professional headshot",
+      "Creative black and white image"
+    ];
+
+    $("#addItem").click(function() {
+      if (shotCounter < shotIdeas.length) {
+        $("#photoList").append("<li>" + shotIdeas[shotCounter] + "</li>");
+        shotCounter++;
+      } else {
+        $("#photoList").append("<li>Shot list complete.</li>");
+      }
+    });
+
+    $("#submitBtn").click(function() {
+      var name = $("#nameInput").val();
+      var session = $("#sessionInput").val();
+
+      if (name === "") {
+        $("#output").text("Please enter your name.");
+      } else {
+        $("#output").text("Hello " + name + ", you selected: " + session + ".");
+      }
+    });
+
+  });
+</script>
+
+</body>
+</html>

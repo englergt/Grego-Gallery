@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-  const navMap = {
-    "index.html": "nav-home",
-    "galleries.html": "nav-galleries",
-    "contact.html": "nav-contact",
-    "materialize.html": "nav-materialize"
-  };
+ const navMap = {
+  "index.html": "nav-home",
+  "galleries.html": "nav-galleries",
+  "contact.html": "nav-contact",
+  "materialize.html": "nav-materialize",
+  "materialize2.html": "nav-materialize2",
+  "JQuery.html": "nav-JQuery"
+};
 
   const activeNavId = navMap[currentPage];
 
